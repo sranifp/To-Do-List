@@ -1,0 +1,330 @@
+:root {
+    --bg-main: #eef5f3;
+    --bg-card: #f9fbfb;
+    --bg-panel: #f3f7f6;
+    --bg-column: #eaf1ef;
+    --bg-card-item: #ffffff;
+    --primary: #14746f;
+    --text-dark: #2c3e50;
+    --text-muted: #7f8c8d;
+    --low-color: #2ecc71;
+    --med-color: #f39c12;
+    --high-color: #e74c3c;
+    --border-color: #d1e2df;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app-container {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 1400px;
+    height: 90vh;
+    min-height: 650px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(20, 116, 111, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.profile-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.profile-info p {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+
+.time-info {
+    font-size: 14px;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.left-panel {
+    flex: 0 0 320px;
+    border-right: 1px solid var(--border-color);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--bg-panel);
+}
+
+.right-panel {
+    flex: 1;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.input-group textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    color: var(--text-dark);
+    background-color: #ffffff;
+}
+
+.input-group textarea:focus, .input-group select:focus, .input-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(20, 116, 111, 0.1);
+}
+
+.input-group select, .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    background-color: #ffffff;
+    color: var(--text-dark);
+}
+
+.btn-submit {
+    background-color: var(--primary);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover {
+    background-color: #0f5652;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+.btn-delete-all {
+    background-color: transparent;
+    color: var(--high-color);
+    border: 1px solid var(--high-color);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: auto;
+    transition: all 0.2s;
+}
+
+.btn-delete-all:hover {
+    background-color: var(--high-color);
+    color: #ffffff;
+}
+
+.list-column {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-column);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    height: 100%;
+    overflow: hidden;
+}
+
+.overdue-column {
+    background-color: #fff2f2;
+    border-color: #fcd3d3;
+}
+
+.section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.overdue-column .section-title {
+    color: var(--high-color);
+    border-bottom-color: #fca5a5;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 4px;
+}
+
+.list-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 4px;
+}
+
+.task-card {
+    background-color: var(--bg-card-item);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    box-shadow: 0 4px 6px rgba(20, 116, 111, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(20, 116, 111, 0.08);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.checkbox-container input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.priority-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.p-high { background-color: #fed7d7; color: #c53030; }
+.p-medium { background-color: #feebc8; color: #c05621; }
+.p-low { background-color: #c6f6d5; color: #22543d; }
+
+.task-text {
+    font-size: 14px;
+    line-height: 1.4;
+    word-break: break-word;
+    color: var(--text-dark);
+}
+
+.task-date {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 4px;
+    transition: color 0.2s;
+}
+
+.btn-delete:hover {
+    color: var(--high-color);
+}
+
+.done-item {
+    background-color: #f1f5f9;
+    opacity: 0.7;
+    border-color: #e2e8f0;
+}
+
+.done-item .task-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.empty-info {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 16px;
+}
+
+@media (max-width: 1024px) {
+    body { padding: 10px; }
+    .app-container { height: auto; overflow: visible; }
+    .main-content { flex-direction: column; overflow: visible; }
+    .left-panel { flex: none; border-right: none; border-bottom: 1px solid var(--border-color); }
+    .right-panel { grid-template-columns: 1fr; overflow: visible; height: auto; }
+    .list-column { height: 350px; }
+}

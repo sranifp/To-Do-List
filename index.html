@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi To-Do List Karyawan</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <div class="header-info">
+            <div class="profile-info">
+                <h3 id="user-name">Sintiarani Febyan Putri</h3>
+                <p id="user-role">Software Engineer</p>
+            </div>
+            <div class="time-info" id="current-time"></div>
+        </div>
+
+        <div class="main-content">
+            
+            <div class="left-panel">
+                <div class="input-group">
+                    <label for="task-input">Text Area</label>
+                    <textarea id="task-input" placeholder="Tuliskan tugas harian Anda di sini..."></textarea>
+                </div>
+                
+                <div class="input-group">
+                    <label for="priority-input">Level Prioritas</label>
+                    <select id="priority-input">
+                        <option value="Low">Low</option>
+                        <option value="Medium" selected>Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="date-input">Deadline Task</label>
+                    <input type="date" id="date-input">
+                </div>
+
+                <button class="btn-submit" id="btn-submit">Submit Task</button>
+                <button class="btn-delete-all" id="btn-delete-all">Delete All List</button>
+            </div>
+
+            <div class="right-panel">
+                
+                <div class="list-column overdue-column">
+                    <div class="section-title">Overdue</div>
+                    <div id="overdue-list" class="list-container"></div>
+                </div>
+
+                <div class="list-column">
+                    <div class="section-title">To Do</div>
+                    <div id="todo-list" class="list-container"></div>
+                </div>
+
+                <div class="list-column">
+                    <div class="section-title">Done</div>
+                    <div id="done-list" class="list-container"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
